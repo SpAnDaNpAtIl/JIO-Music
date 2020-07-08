@@ -77,7 +77,7 @@ def final_jio_songs_player():
             player.play()
         elif(player_by_vlc=='STOP'):
             player.stop
-            print('Use Ctrl+Z to stop the player or player will continue to ask for song searches')
+            print('Use Ctrl+c to stop the player or player will continue to ask for song searches')
             final_jio_songs_player()
 
             
