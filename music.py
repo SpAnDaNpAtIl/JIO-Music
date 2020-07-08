@@ -79,7 +79,24 @@ def final_jio_songs_player():
             player.stop
             print('Use Ctrl+Z to stop the player or player will continue to ask for song searches')
             final_jio_songs_player()
-                
+
+            
+print('   ___ _        ___  ____   _ _____ _____ _____ ')
+print('  |_  (_)       |  \/  | | | /  ___|_   _/  __ \')    
+print('    | |_  ___   | .  . | | | \ `--.  | | | /  \/')
+print('    | | |/ _ \  | |\/| | | | |`--. \ | | | |    ')     
+print('/\__/ / | (_) | | |  | | |_| /\__/ /_| |_| \__/\')   
+print('\____/|_|\___/  \_|  |_/\___/\____/ \___/ \____/') 
+print('') 
+print('') 
+print('') 
+print('') 
+print('                   _ _ _             _____              _           ')   
+print('                  | (_) |        _  |  ___|            | |          ') 
+print('  ___ _ __ ___  __| |_| |_ ___  (_) | |____  _____   __| |_   _ ___ ') 
+print(' / __| '__/ _ \/ _` | | __/ __|     |  __\ \/ / _ \ / _` | | | / __|') 
+print('| (__| | |  __/ (_| | | |_\__ \  _  | |___>  < (_) | (_| | |_| \__ \') 
+print(' \___|_|  \___|\__,_|_|\__|___/ (_) \____/_/\_\___/ \__,_|\__,_|___/')  
 final_jio_songs_player()
             
 
