@@ -1,6 +1,7 @@
 import requests
 import json
 import vlc
+import sys
 
 data_url = "http://beatsapi.media.jio.com/v2_1/beats-api/jio/src/response/search2/"
 
@@ -21,18 +22,19 @@ def song_search(query):
         
         else: 
             def other_function_for_other_matches(i):
-                try:
+                if(i<len(data_of_other_similar_matches)):
                     print(" ")
-                    print("'"+data_of_other_similar_matches[i].get('title')+"'","by",data_of_best_match[0].get('artist'))
+                    print("'"+data_of_other_similar_matches[i].get('title')+"'","by",data_of_other_similar_matches[i].get('artist'))
                     if(int(input("Enter integer 1 if this is the correct song. Else enter any integer "))==1):
                         final_id_of_songs= data_of_other_similar_matches[i].get('id')
                         final_title_of_song = data_of_other_similar_matches[i].get('title')
                         final_artist_of_song= data_of_other_similar_matches[i].get('artist')
                     else:
                         other_function_for_other_matches(i+1)
-                except:
+                else:
                     print("Sorry!! We are not able to process your song. Try searching it again more precisely or maybe there is an error in JIO servers.")
-                    exit()
+                    sys.exit()
+                    
                     
             other_function_for_other_matches(0)
             
@@ -42,7 +44,7 @@ def song_search(query):
     
     else:
         print("There is some error. Maybe you can try mentioning song more precisely in query")
-        quit()
+        sys.exit()
 
     
     
@@ -70,17 +72,22 @@ def final_jio_songs_player():
     print("Playing your desired song.... :)")
     player.play()
     while(True):
-        player_by_vlc=str(input("Type 'PAUSE' to pause it or 'PLAY' to resume again or STOP to stop the song: "))
+        player_by_vlc=str(input("Type 'PAUSE' to pause it or 'PLAY' to resume again or STOP to stop the song or type anything else for a new song: "))
         if(player_by_vlc=='PAUSE'):
             player.pause()
         elif(player_by_vlc=='PLAY'):
             player.play()
         elif(player_by_vlc=='STOP'):
+            player.pause()
             player.stop
             print('Use Ctrl+c to stop the player or player will continue to ask for song searches')
             final_jio_songs_player()
+        else:
+            player.pause()
+            player.stop
+            final_jio_songs_player()
 
-            
+
 print('   ___ _        ___  ____   _ _____ _____ _____ ')
 print('  |_  (_)       |  \/  | | | /  ___|_   _/  __ \'')    
 print('    | |_  ___   | .  . | | | \ `--.  | | | /  \/')
@@ -99,7 +106,7 @@ print('| |_) | |_| | | |___>  < (_) | (_| | |_| \__ \'')
 print('|_.__/ \__, | \____/_/\_\___/ \__,_|\__,_|___/')
 print('        __/ |                                 ')
 print('       |___/                                  ')
- 
+    
 final_jio_songs_player()
             
 
