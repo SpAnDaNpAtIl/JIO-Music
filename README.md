@@ -1,3 +1,6 @@
+##JIO fixed this issue so you can no longer send queries to these links. I am still keeping this repository if you want to check how we accessed jio music few months back.
+
+
 ### JIO-Music
 ##### Music Streaming Player :)
 
